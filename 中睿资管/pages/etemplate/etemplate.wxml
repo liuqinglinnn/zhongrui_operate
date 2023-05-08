@@ -1,0 +1,188 @@
+<view class="carbase">
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      车辆及告知函图片
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E5%85%A5%E5%BA%93%E5%9B%BE%E7%89%872.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E5%85%A5%E5%BA%93%E5%9B%BE%E7%89%872.jpg"
+      >
+      </image>
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E5%85%A5%E5%BA%93%E5%9B%BE%E7%89%871.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E5%85%A5%E5%BA%93%E5%9B%BE%E7%89%871.jpg"
+      >
+      </image>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      入库视频
+    </view>
+    <view class="UpLoadPicture_">
+      <video
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E5%85%A5%E5%BA%93%E8%B5%84%E6%96%99%E5%8F%82%E8%80%83%E8%A7%86%E9%A2%91.mp4"
+        custom-cache="{{false}}"
+      ></video>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+
+    <view class="UpLoadPicture_text">
+      入库音频
+    </view>
+    <view class="UpLoadPicture_">
+      <view class="UpLoadPicture_item">
+        <view style="width:100%; display:flex;  justify-content: center; align-items: center;">
+          <audio
+            style="width:80%"
+            bindpause="paused"
+            data-ssrc="http://image.fzuhuahuo.cn/%E6%8A%A5%E8%AD%A6%E6%8A%A5%E5%A4%87%EF%BC%8C%E9%80%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%8F%82%E8%80%83%E9%9F%B3%E9%A2%91.mp3"
+            bindplay="audioPlayed"
+            name="报警报备，通话记录"
+            src="http://image.fzuhuahuo.cn/%E6%8A%A5%E8%AD%A6%E6%8A%A5%E5%A4%87%EF%BC%8C%E9%80%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%8F%82%E8%80%83%E9%9F%B3%E9%A2%91.mp3"
+            poster=""
+            controls
+          />
+          <view style="position: absolute;right:20%">
+            <view
+              class=""
+              bindtap="playaudio"
+              data-src="http://image.fzuhuahuo.cn/%E6%8A%A5%E8%AD%A6%E6%8A%A5%E5%A4%87%EF%BC%8C%E9%80%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%8F%82%E8%80%83%E9%9F%B3%E9%A2%91.mp3"
+              hidden="{{statustotal!=null}}"
+            >
+              播放
+            </view>
+            <view
+              class=""
+              bindtap="pauseaudio"
+              data-src="http://image.fzuhuahuo.cn/%E6%8A%A5%E8%AD%A6%E6%8A%A5%E5%A4%87%EF%BC%8C%E9%80%9A%E8%AF%9D%E8%AE%B0%E5%BD%95%E5%8F%82%E8%80%83%E9%9F%B3%E9%A2%91.mp3"
+              hidden="{{statustotal==null}}"
+            >
+              暂停
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      清收短信图片
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E6%B8%85%E6%94%B6%E7%9F%AD%E4%BF%A11.jpg"
+        mode="aspectFit"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E6%B8%85%E6%94%B6%E7%9F%AD%E4%BF%A11.jpg"
+      >
+      </image>
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E6%B8%85%E6%94%B6%E7%9F%AD%E4%BF%A12.jpg"
+        mode="aspectFit"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E6%B8%85%E6%94%B6%E7%9F%AD%E4%BF%A12.jpg"
+      >
+      </image>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      车辆上板视频
+    </view>
+    <view class="UpLoadPicture_">
+      <video
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E4%B8%8B%E6%9D%BF%E5%8F%82%E8%80%83%E8%A7%86%E9%A2%91.mp4"
+        custom-cache="{{false}}"
+      ></video>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      清收作业视频
+    </view>
+    <view class="UpLoadPicture_">
+      <video
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E6%B8%85%E6%94%B6%E4%BD%9C%E4%B8%9A%E5%8F%82%E8%80%83%E8%A7%86%E9%A2%91.mp4"
+        custom-cache="{{false}}"
+      ></video>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      车辆下板视频
+    </view>
+    <view class="UpLoadPicture_">
+      <video
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E4%B8%8A%E6%9D%BF%E5%8F%82%E8%80%83%E8%A7%86%E9%A2%91.mp4"
+        custom-cache="{{false}}"
+      ></video>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      绕车检查视频
+    </view>
+    <view class="UpLoadPicture_">
+      <video
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E7%BB%95%E8%BD%A6%E6%A3%80%E6%9F%A5%E5%8F%82%E8%80%83%E8%A7%86%E9%A2%91.mp4"
+        custom-cache="{{false}}"
+      ></video>
+    </view>
+  </view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      车辆情况图片
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%871.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%871.jpg"
+      >
+      </image>
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%872.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%872.jpg"
+      >
+      </image>
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%873.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%873.jpg"
+      >
+      </image>
+      <image
+        class="UpLoadPicture_img"
+        src="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%874.jpg"
+        mode="scaleToFill"
+        bindtap='clickImg'
+        data-presrc="http://image.fzuhuahuo.cn/%E8%BD%A6%E8%BE%86%E6%83%85%E5%86%B5%E5%9B%BE%E7%89%874.jpg"
+      >
+      </image>
+    </view>
+  </view>
+</view>
+

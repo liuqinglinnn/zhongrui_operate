@@ -1,0 +1,555 @@
+<view class="biankuang">
+  <view class="title">
+    <view class="title_text">
+      实际用车人
+    </view>
+    <picker
+      class="title_input"
+      mode="selector"
+      value="{{usepeopleindex}}"
+      bindchange="susepeople"
+      range="{{usepeople}}"
+    >
+      <view>
+        {{usepeople[usepeopleindex]}}
+      </view>
+    </picker>
+  </view>
+  <view class="border"></view>
+  <view class="time">
+    <view class="time_text">
+      回收时间
+    </view>
+    <view class="time_">
+      <picker
+        class="time_date"
+        mode="date"
+        value="{{huishoudate}}"
+        start="2022-06-01"
+        end="2025-09-01"
+        bindchange="shuishoudate"
+      >
+        <view>
+          {{huishoudate}}
+        </view>
+      </picker>
+      <!-- <picker
+        class="time_date"
+        mode="time"
+        value="{{huishoutime}}"
+        start="09:01"
+        end="21:01"
+        bindchange="shuishoutime"
+      >
+        <view>
+          {{huishoutime}}
+        </view>
+      </picker> -->
+    </view>
+  </view>
+  <view class="border"></view>
+  <view class="time">
+    <view class="time_text">
+      保全时间
+    </view>
+    <view class="time_">
+      <picker
+        class="time_date"
+        mode="date"
+        value="{{protectTime}}"
+        start="2022-06-01"
+        end="2025-09-01"
+        bindchange="baoquandate"
+      >
+        <view>
+          {{protectTime}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      入库仓库
+    </view>
+    <view
+      class="title_input"
+      wx:if="{{rukucangku==null||rukucangku==''}}"
+      bindtap="Chooseaddress"
+    >
+      获取位置信息
+    </view>
+    <view
+      class="title_input"
+      wx:if="{{rukucangku!=null}}"
+      bindtap="Chooseaddress"
+    >
+      {{rukucangku}}
+    </view>
+  </view>
+
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      车上电话
+    </view>
+    <input
+      class="title_input"
+      value="{{cheshangdianhua}}"
+      type="number"
+      placeholder="请输入车上电话号码"
+      maxlength="20"
+      bindinput="scheshangdianhua"
+    >
+    </input>
+  </view>
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      保全方
+    </view>
+    <input
+      class="title_input"
+      value="{{protectPerson}}"
+      type="text"
+      placeholder="请输入保全方"
+      maxlength="20"
+      bindinput="sprotectPerson"
+    >
+    </input>
+  </view>
+  <view class="title">
+    <view class="title_text">
+      保全方式
+    </view>
+    <input
+      class="title_input"
+      value="{{protectWay}}"
+      type="text"
+      placeholder="请输入保全方式"
+      maxlength="20"
+      bindinput="sprotectWay"
+    >
+    </input>
+  </view>
+  <view class="title">
+    <view class="title_text">
+      过户意愿
+    </view>
+    <input
+      class="title_input"
+      value="{{protectMind}}"
+      type="text"
+      placeholder="请输入过户意愿"
+      maxlength="20"
+      bindinput="sprotectMind"
+    >
+    </input>
+  </view>
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      车钥匙
+    </view>
+    <picker
+      class="title_input"
+      mode="selector"
+      style="width:75rpx"
+      value="{{cheyaoshiindex}}"
+      bindchange="scheyaoshi"
+      range="{{cheyaoshi}}"
+    >
+      <view>
+        {{cheyaoshi[cheyaoshiindex]}}
+      </view>
+    </picker>
+  </view>
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      行驶证
+    </view>
+    <picker
+      class="title_input"
+      mode="selector"
+      style="width:75rpx"
+      value="{{xingshizhengindex}}"
+      bindchange="sxingshizheng"
+      range="{{xingshizheng}}"
+    >
+      <view>
+        {{xingshizheng[xingshizhengindex]}}
+      </view>
+    </picker>
+  </view>
+  <view class="border"></view>
+  <view class="content">
+    <view class="content_text">
+      车况描述
+    </view>
+    <textarea
+      class="content_input"
+      value="{{chekuangmiaoshu}}"
+      placeholder="请输入车况描述"
+      maxlength="200"
+      auto-height="true"
+      bindinput="schekuangmiaoshu"
+      bindlinechange="%{15}"
+    ></textarea>
+  </view>
+  <view class="border"></view>
+  <view class="content">
+    <view class="content_text">
+      车内物品描述
+    </view>
+    <textarea
+      class="content_input"
+      value="{{cheneiwupingmiaoshu}}"
+      placeholder="请输入车内物品描述"
+      maxlength="200"
+      auto-height="true"
+      bindinput="scheneiwupingmiaoshu"
+      bindlinechange="%{15}"
+    ></textarea>
+  </view>
+  <view class="border"></view>
+  <view class="content">
+    <view class="content_text">
+      保全经过
+    </view>
+    <textarea
+      class="content_input"
+      value="{{protectText}}"
+      placeholder="请输入保全经过"
+      maxlength="200"
+      auto-height="true"
+      bindinput="sprotectText"
+      bindlinechange="%{15}"
+    ></textarea>
+  </view>
+  <view class="border"></view>
+  <view class="title">
+    <view class="title_text">
+      送达车库
+    </view>
+    <input
+      class="title_input"
+      value="{{songdacheku}}"
+      type="text"
+      placeholder="请输入送达车库"
+      maxlength="20"
+      bindinput="ssongdacheku"
+    >
+    </input>
+  </view>
+  <view class="border"></view>
+  <view class="UpLoadPicture">
+    <view class="UpLoadPicture_text">
+      <view class="" style="font-size:35rpx">
+        入库材料（长按删除）
+      </view>
+      <view class="UpLoadPicture_text_pop" bindtap="material">
+        材料要求
+      </view>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      1告知函与车牌合影
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{picture1.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{picture1}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile1"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <image
+            class="UpLoadPicture2_img"
+            src="{{item.path}}"
+            mode="aspectFit"
+            bindtap='clickImg'
+            data-presrc="{{item.path}}"
+          >
+          </image>
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/imageinput.png"
+        mode="aspectFit"
+        bindtap="choosepicture1"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      2、电话录音与通话截图
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{music2.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{music2}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile2"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_" style="height:auto;width:100%">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/video.png"
+        mode="aspectFit"
+        bindtap="choosefile2"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      3、短信两条截图
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{picture3.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{picture3}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile3"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <image
+            class="UpLoadPicture2_img"
+            src="{{item.path}}"
+            mode="aspectFit"
+            bindtap='clickImg'
+            data-presrc="{{item.path}}"
+          >
+          </image>
+        </view>
+
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/imageinput.png"
+        mode="aspectFit"
+        bindtap="choosepicture3"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      4、上板视频
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{videoarr4.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{videoarr4}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile4"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <video
+            class="UpLoadPicture2_img"
+            custom-cache="{{false}}"
+            src="{{item.path}}"
+          ></video>
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/shiping.png"
+        mode="aspectFit"
+        bindtap="choosevideo4"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      5、清收过程视频
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{videoarr5.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{videoarr5}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile5"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <video
+            class="UpLoadPicture2_img"
+            custom-cache="{{false}}"
+            src="{{item.path}}"
+          ></video>
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/shiping.png"
+        mode="aspectFit"
+        bindtap="choosevideo5"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      6、下板视频
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{videoarr6.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{videoarr6}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile6"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <video
+            class="UpLoadPicture2_img"
+            custom-cache="{{false}}"
+            src="{{item.path}}"
+          ></video>
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/shiping.png"
+        mode="aspectFit"
+        bindtap="choosevideo6"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      7、入库绕车一周视频（若开车门拍全程视频）
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{videoarr7.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{videoarr7}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile7"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <video
+            class="UpLoadPicture2_img"
+            custom-cache="{{false}}"
+            src="{{item.path}}"
+          ></video>
+        </view>
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/shiping.png"
+        mode="aspectFit"
+        bindtap="choosevideo7"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      8、车辆情况图
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{picture8.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{picture8}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile8"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <image
+            class="UpLoadPicture2_img"
+            src="{{item.path}}"
+            mode="aspectFit"
+            bindtap='clickImg'
+            data-presrc="{{item.path}}"
+          >
+          </image>
+        </view>
+
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/imageinput.png"
+        mode="aspectFit"
+        bindtap="choosepicture8"
+      >
+      </image>
+    </view>
+    <view style="margin-left:10rpx;margin-top:20rpx;font-size:30rpx;color:black;font-weight:bold;">
+      9、入库单
+    </view>
+    <view class="UpLoadPicture2_" wx:if="{{picture9.length!=0}}">
+      <view
+        class="UpLoadPicture2_item"
+        wx:for="{{picture9}}"
+        wx:for-index="idx"
+        wx:for-item="item"
+        bindlongpress="deletefile9"
+        data-index="{{idx}}"
+      >
+        <view class="UpLoadPicture2_item_">
+          <image
+            class="UpLoadPicture2_img"
+            src="{{item.path}}"
+            mode="aspectFit"
+            bindtap='clickImg'
+            data-presrc="{{item.path}}"
+          >
+          </image>
+        </view>
+
+      </view>
+    </view>
+    <view class="UpLoadPicture_">
+      <image
+        class="UpLoadPicture_img"
+        src="/icon/imageinput.png"
+        mode="aspectFit"
+        bindtap="choosepicture9"
+      >
+      </image>
+    </view>
+  </view>
+</view>
+
+<view class="end">
+  <!-- <view
+    class="save"
+    wx:if="{{cailiao.length!=0}}"
+    bindtap="xiugaicailiao"
+  >
+    <view>
+      全部删除
+    </view>
+  </view> -->
+  <view class="yes" bindtap="Submit">
+    <view>
+      确认入库
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,51 @@
+{
+    "pages": [
+      "pages/head/head",
+      "pages/home/index",
+      "pages/mine/index",
+      "pages/addgps/addgps",
+      "pages/enterhouse/enterhouse", 
+      "pages/cardetail/cardetail",
+      "pages/tiegps/tiegps",
+      "pages/regist/regist",
+      "pages/etemplate/etemplate"
+    ],
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    },
+    "networkTimeout": {
+      "request": 60000,
+      "uploadFile": 120000,
+      "downloadFile": 120000
+    },  
+    "requiredPrivateInfos": ["getLocation", "chooseLocation"],  
+    "window": {
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "中睿资管",
+      "navigationBarTextStyle": "black",
+      "backgroundTextStyle": "dark"
+    },
+    "tabBar": {
+      "list": [
+        {
+          "pagePath": "pages/home/index",
+          "text": "首页",
+          "iconPath": "icon/home.png",
+          "selectedIconPath": "icon/home.png"
+        },
+        {
+          "pagePath": "pages/mine/index",
+          "text": "我的",
+          "iconPath": "icon/admin.png",
+          "selectedIconPath": "icon/admin.png"
+        }
+      ],
+      "color": "#696969",
+      "selectedColor": "#478ff3"
+    },
+  
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+  }
